@@ -1,210 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact & Feedback</title>
+  <meta charset="UTF-8">
+  <title>Contact - Basotho Cultural Heritage</title>
   <style>
-    :root{
-      --max-width:900px;
-      --accent:#1f7fff;
-      --muted:#6b7280;
-      --bg:#f7f9fb;
-      --card:#ffffff;
-      --radius:12px;
-      --gap:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:48px 20px;
-      display:flex;
-      justify-content:center;
-    }
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:0 6px 20px rgba(15,23,42,0.06);
-      padding:28px;
-      margin-bottom:24px;
-    }
-    h1{margin:0 0 6px 0;font-size:1.6rem}
-    p.lead{margin:0 0 18px 0;color:var(--muted)}
-
-    form{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:var(--gap);
-      align-items:start;
-    }
-    label{
-      display:block;
-      font-size:0.9rem;
-      margin-bottom:8px;
-      color:#0b1220;
-    }
-    .field{
-      display:flex;
-      flex-direction:column;
-    }
-    input[type="text"], input[type="email"], select, textarea{
-      padding:12px 14px;
-      font-size:1rem;
-      border:1px solid #e6e9ef;
-      border-radius:10px;
-      background:transparent;
-      transition:box-shadow .18s ease, border-color .18s ease, transform .08s ease;
-    }
-    textarea{min-height:140px; resize:vertical}
-
-    /* hover & focus effects */
-    input[type="text"]:hover, input[type="email"]:hover, select:hover, textarea:hover{
-      transform:translateY(-1px);
-    }
-    input[type="text"]:focus, input[type="email"]:focus, select:focus, textarea:focus{
-      outline: none;
-      border-color:var(--accent);
-      box-shadow:0 4px 18px rgba(31,127,255,0.12);
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
     }
 
-    /* full width single column for message */
-    .full{
-      grid-column:1 / -1;
+    /* Navigation Bar */
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #e63946;
     }
 
-    .actions{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      grid-column:1 / -1;
+    /* Contact Section */
+    .contact-section {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    button[type="submit"]{
-      appearance:none;
-      border:0;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:600;
-      cursor:pointer;
-      background:linear-gradient(90deg,var(--accent),#0066ff 120%);
-      color:white;
-      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
     }
-    button[type="submit"]:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(31,127,255,0.18)}
-    button[type="submit"]:active{ transform:translateY(-1px)}
-
-    .note{font-size:0.9rem;color:var(--muted)}
-
-    /* small helper for validation message (HTML5 will provide messages, but keep a small aria-live region) */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .contact-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #c72c3b;
+    }
 
     /* Footer */
-    footer.site-footer{
-      background:#000000;
-      color:#ffffff;
-      padding:20px 18px;
-      border-radius:8px;
-      text-align:center;
-      margin-top:12px;
-      font-size:0.95rem;
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
     }
-
-    /* Mobile friendly adjustments */
-    @media (max-width:720px){
-      body{padding:24px 16px}
-      form{grid-template-columns:1fr;}
-      .container{padding:0}
-      .card{padding:18px}
-      h1{font-size:1.3rem}
+    footer p {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card" aria-labelledby="contact-heading">
-      <h1 id="contact-heading">Contact & Feedback</h1>
-      <p class="lead">Have a question, suggestion, or want to collaborate? Send us a message and we'll get back to you.</p>
 
-      <form id="contactForm" action="#" method="post" novalidate>
-        <!-- Name -->
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required minlength="2" placeholder="Your full name" autocomplete="name" />
-        </div>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="clothing.html">Traditional Clothing</a></li>
+      <li><a href="music.html">Music & Dance</a></li>
+      <li><a href="crafts.html">Crafts & Art</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
 
-        <!-- Email -->
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@domain.com" autocomplete="email" />
-        </div>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Contact & Feedback</h2>
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="KHOPOTSO" required placeholder="Your name">
 
-        <!-- Topic of Interest -->
-        <div class="field">
-          <label for="topic">Topic of interest</label>
-          <select id="topic" name="topic" required>
-            <option value="" disabled selected>Choose a topic...</option>
-            <option value="general">General question</option>
-            <option value="support">Support</option>
-            <option value="partnerships">Partnerships</option>
-            <option value="feedback">Feedback / Bug report</option>
-          </select>
-        </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="Your email">
 
-        <!-- empty placeholder to keep grid balance on larger screens -->
-        <div></div>
+      <label for="topic">Topic of Interest:</label>
+      <select id="topic" name="topic" required>
+        <option value="">--Select a topic--</option>
+        <option value="attire">Basotho Attire</option>
+        <option value="music">Music & Dance</option>
+        <option value="crafts">Crafts & Art</option>
+        <option value="festivals">Festivals</option>
+      </select>
 
-        <!-- Message -->
-        <div class="field full">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required minlength="10" placeholder="Tell us what's on your mind..."></textarea>
-        </div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
 
-        <!-- Actions -->
-        <div class="actions">
-          <button type="submit">Send message</button>
-          <p class="note">We typically reply within 2 business days.</p>
-        </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-        <div class="sr-only" aria-live="polite" id="formStatus"> </div>
-      </form>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Basotho Cultural Heritage. All rights reserved.</p>
+    <p>Contact us: info@basothoculture.org | +266 500 12345</p>
+  </footer>
 
-    <footer class="site-footer">
-      &copy; <span id="year"></span> Your Company — All rights reserved.
-    </footer>
-  </main>
-
-  <script>
-    // simple UX: fill current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // progressive enhancement: show friendly aria-live messages on submit
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-    form.addEventListener('submit', function(e){
-      // rely on HTML5 validation first
-      if(!form.checkValidity()){
-        // let browser show built-in messages; assistive text updated
-        status.textContent = 'Please complete the required fields.';
-        return;
-      }
-
-      e.preventDefault();
-      // fake submit for demo (replace with real fetch/ajax in production)
-      status.textContent = 'Sending...';
-      setTimeout(()=>{
-        status.textContent = 'Message sent — thank you!';
-        form.reset();
-      }, 800);
-    });
-  </script>
 </body>
 </html>
+
